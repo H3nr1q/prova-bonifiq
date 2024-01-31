@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Interfaces\NovaPasta\**" />
-    <Content Remove="Interfaces\NovaPasta\**" />
-    <EmbeddedResource Remove="Interfaces\NovaPasta\**" />
-    <None Remove="Interfaces\NovaPasta\**" />
+    <Compile Remove="PaymentStrategyFactory.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

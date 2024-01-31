@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProvaPub.Interfaces;
 using ProvaPub.Models;
 using ProvaPub.Repository;
 using ProvaPub.Services;
@@ -16,10 +17,18 @@ namespace ProvaPub.Controllers
 	[Route("[controller]")]
 	public class Parte3Controller :  ControllerBase
 	{
-		[HttpGet("orders")]
-		public async Task<Order> PlaceOrder(string paymentMethod, decimal paymentValue, int customerId)
-		{
-			return await new OrderService().PayOrder(paymentMethod, paymentValue, customerId);
-		}
-	}
+		private readonly IPaymentStrategyFactory paymentStrategyFactory;
+
+        public Parte3Controller(IPaymentStrategyFactory paymentStrategyFactory)
+        {
+            this.paymentStrategyFactory = paymentStrategyFactory;
+        }
+
+        [HttpGet("orders")]
+        public async Task<Order> PlaceOrder(string paymentMethod, decimal paymentValue, int customerId)
+        {
+            var paymentStrategy = this.paymentStrategyFactory.CreatePaymentStrategy(paymentMethod);
+            return await new OrderService(paymentStrategy).PlaceOrder(paymentValue, customerId);
+        }
+    }
 }
