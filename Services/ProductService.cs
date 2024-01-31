@@ -5,8 +5,6 @@ namespace ProvaPub.Services
 {
     public class ProductService : AbstractPagedService<Product, ProductList>
     {
-        public ProductService(TestDbContext ctx) : base(ctx)
-        {
-        }
+        public ProductService(TestDbContext ctx) : base(ctx) { }
     }
 }
