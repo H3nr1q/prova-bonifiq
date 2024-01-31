@@ -30,7 +30,7 @@ namespace ProvaPub.Tests
 
         // Teste para validações de exceções
         [Fact]
-        public async Task CanPurchase_ShouldThrowException_WhenCustomerDoesNotExists()
+        public async Task ShouldThrowException_WhenCustomerDoesNotExists()
         {
             var customerId = 1;
             var purchaseValue = 101;
@@ -44,7 +44,7 @@ namespace ProvaPub.Tests
         }
 
         [Fact]
-        public async Task CanPurchase_ShouldThrowException_WhenCustomerIdIsZero()
+        public async Task ShouldThrowException_WhenCustomerIdIsZero()
         {
             var customerId = 0;
             var purchaseValue = 101;
