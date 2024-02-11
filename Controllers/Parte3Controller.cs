@@ -24,7 +24,7 @@ namespace ProvaPub.Controllers
             this.paymentStrategyFactory = paymentStrategyFactory;
         }
 
-        [HttpGet("orders")]
+        [HttpPost("orders")]
         public async Task<Order> PlaceOrder(string paymentMethod, decimal paymentValue, int customerId)
         {
             var paymentStrategy = this.paymentStrategyFactory.CreatePaymentStrategy(paymentMethod);

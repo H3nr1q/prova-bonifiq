@@ -14,7 +14,7 @@ namespace ProvaPub.Services
             _ctx = ctx;
         }
 
-        public TList ListPagedService(int page, int pageSize, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
+        public async Task<TList> ListPagedService(int page, int pageSize, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
         {
             var startIndex = (page - 1) * pageSize;
 
