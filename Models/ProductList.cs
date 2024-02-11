@@ -1,7 +1,4 @@
 ﻿namespace ProvaPub.Models
 {
-    public class ProductList: GenericList<Product>
-	{
-
-	}
+    public class ProductList: GenericList<Product>{	}
 }

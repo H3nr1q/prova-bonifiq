@@ -17,6 +17,11 @@ namespace ProvaPub.Controllers
 		/// 3 - Dê uma olhada nos arquivos /Models/CustomerList e /Models/ProductList. Veja que há uma estrutura que se repete. 
 		/// Como você faria pra criar uma estrutura melhor, com menos repetição de código? E quanto ao CustomerService/ProductService. Você acha que seria possível evitar a repetição de código?
 		/// 
+		/// Resposta:
+		/// 
+		/// Para as listas eu vi que somente o tipo das listas elas eram diferentes, então eu criei uma classe generica, ondem as classes CustomerList e ProductList herdam dela passando o tipo T.
+		/// E pasra os services criei uma classe abstrata com a mesma ideia (AbstractPagedService), então os CustomerService e ProductService herdam dela passando a entidade e qual lista.
+		/// 
 		/// </summary>
 		/// 
 		private readonly ProductService productService;
